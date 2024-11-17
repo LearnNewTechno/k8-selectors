@@ -11,16 +11,18 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-2
+  labels:
+    app: podAffinity
 spec:
   affinity:
     podAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
       - labelSelector:
           matchExpressions:
-          - key: name
+          - key: app
             operator: In
             values:
-            - pod-1
+            - podAffinity
         topologyKey: topology.kubernetes.io/zone
   containers:
   - name: nginx
