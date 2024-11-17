@@ -9,10 +9,10 @@ spec:
        - weight: 1
          preference:
            matchExpressions:
-           - key: hardware
+           - key: hardware1
              operator: In
              values:
-             - gpu
+             - gpu1
   containers:
   - name: nginx
     image: nginx:latest
